@@ -1,0 +1,7 @@
+O que é um memory leak? Como é possível, ao escrever um programa em C, evitá-lo?
+
+Um memory leak ocorre quando um programa aloca dinamicamente memória durante sua execução, mas falha em liberar ou desalocar essa memória antes de encerrar. Isso leva a uma gradual acumulação de memória não utilizada ao longo do tempo, resultando em um aumento no consumo de memória do programa.
+
+Um determinado programador fez 100 requisições para alocação de inteiros na memória, 10MB por vez, na área de heap, usando a função malloc(). Do outro lado, porém, fez somente 35 chamadas para a função free(). Supondo que isso tivesse sido feito num servidor, que nunca é desligado, com memória RAM restrita, descreva os possíveis impactos dessa má prática nesse contexto.
+
+A má prática de alocar 10MB de memória dinamicamente em 100 requisições sem desalocação adequada utilizando a função malloc() pode resultar em memory leaks, acarretando em sérios impactos em servidores que nunca são desligados e possuem recursos de memória RAM restritos. Isso pode levar à exaustão da memória, degradação do desempenho, instabilidade do sistema, interrupção de serviços críticos, dificuldade na identificação do problema e, em última instância, a necessidade de reinicialização do servidor para restaurar a estabilidade. O gerenciamento inadequado da memória pode comprometer significativamente a confiabilidade e eficiência do sistema, destacando a importância de práticas adequadas de alocação e desalocação de memória em ambientes de produção.
